@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/header.css">
+        <script type="text/javascript" src="../js/Share.js" ></script>
+        <script src="../js/jquery-1.11.1.js"></script>
+        <script>
+            $(function(){
+                var a=0;
+                var time;
+                function bb(){
+                    clearInterval(time);
+                    time=setInterval(function(){
+                            a+=1;
+                            if(a>4){
+                                a=0
+                            }
+
+                            $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+                    },1000)
+                }
+                bb()
+
+
+
+                    $('.top').hover(function() {
+                        /* Stuff to do when the mouse enters the element */
+                         clearInterval(time);
+                    }, function() {
+                        /* Stuff to do when the mouse leaves the element */
+                        bb()
+                    });
+
+                    $('.top ul li').hover(function() {
+                        /* Stuff to do when the mouse enters the element */
+                        a=$(this).index();
+                         $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+
+                    }, function() {
+                        /* Stuff to do when the mouse leaves the element */
+                    });
+
+
+
+
+                     $('.header>ol li a').hover(function() {
+                          /* Stuff to do when the mouse enters the element */
+                          $(this).addClass('nav_header').parent().siblings('li').children('a').removeClass('nav_header');
+                      }, function() {
+                          /* Stuff to do when the mouse leaves the element */
+                          $('.header>ol li:nth-of-type(3) a').addClass('nav_header').parent().siblings('li').children('a').removeClass('nav_header');
+                      });
+
+
+
+
+
+
+
+
+
+
+
+
+ //点击切换事件
+                      var y=3;
+                      $('.left_1 .click1').click(function(event) {
+                        y+=1;
+                        if(y%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+
+                        $('.left_1 ul').eq(0).children('li').slideToggle(500);
+                      });
+
+                        //第二个
+                      var x=3;
+                      $('.left_1 .click2').click(function(event) {
+                        x+=1;
+                        if(x%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+
+
+
+                         $('.left_1 ul').eq(1).children('li').slideToggle(500);
+                      });
+
+                      //第三个
+                       var w=3;
+                      $('.left_1 .click3').click(function(event) {
+                        w+=1;
+                        if(w%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+                        $('.left_1 ol').eq(0).children('li').slideToggle(500);
+                      });
+
+                        //第四个
+                       var z=3;
+                      $('.left_1 .click4').click(function(event) {
+                        z+=1;
+                        if(z%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+                        $('.left_1 ol').eq(1).children('li').slideToggle(500);
+                      });
+
+
+
+
+
+
+
+                        //换内容
+                        $('.index1').click(function(event) {
+                            $('.block1').fadeIn(200);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeOut(0);
+                        });
+                         $('.index2').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeIn(200);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeOut(0);
+                        });
+                          $('.index3').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeIn(200);
+                               $('.block4').fadeOut(0);
+                        });
+                           $('.index4').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeIn(200);
+                        });
+
+
+
+
+
+
+
+                     
+            })
+        </script>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+                text-decoration: none;
+            }
+            .content{
+                width: 1400px;
+                height: 1018px;
+                margin: 0px auto;
+            }
+            .content_right{
+                width: 1000px;
+                height: 980px;
+                float: right;
+                margin-right: 60px;
+                display: none;
+            }
+            .block3{
+                display: block
+            }
+            .content_right h3{
+                font-size: 20px;
+                text-align: center;
+                margin-top: 5px;
+            }
+            .content_right ul{
+                width: 100%;
+                height: 840px;
+                margin-top: 20px;
+            }
+            .content_right ul li{
+                float: left;
+                width: 30%;
+                height: 400px;
+                border: 1px solid #d0d0d0;
+                margin-right: 27px;
+                margin-bottom: 30px;
+                padding: 2px;
+            }
+            .content_right ul li p:hover{
+                color: red;
+            }
+            .content_right ul li img{
+                width: 100%;
+                height: 280px;
+            }
+            .content_right ul li img:hover{
+                opacity: 0.6;
+            }
+            .content_right ul li p{
+                font-size: 16px;
+                line-height: 32px;
+                color: #666;
+            }
+            .content_right ul li span{
+                float: right;
+                margin-top: 15px;
+                color: #666;
+            }
+            .content_right ul li span:hover{
+                color: red;
+            }
+
+
+
+
+            .content_right ol{
+                width: 400px;
+                height: 30px;
+                float: right;
+            }
+            .content_right ol li{
+                float: left;
+                margin-right: 20px;
+            }
+            .content_right ol li a{
+                color: #000;
+            }
+            .content_right ol li a:hover{
+                background: #aa2270;
+                color: #fff;
+            }
+            .content_right ol li:nth-of-type(8){
+                background: #aa2270;
+            }
+            .content_right ol li:nth-of-type(8) a{
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="header">
+
+    	<img src="../images/logo.jpg" alt="" class="left">
+
+
+    	<div class="right">
+    		<ul>
+    			<li><a href="">2015年11月13日</a></li>
+    			<li><a href="">星期五</a></li>
+    			<li><a href="">设为首页</a></li>
+    			<li><a href="">收藏本站</a></li>
+    		</ul>
+
+    		<div>
+    		<input type="text" placeholder="&nbsp;&nbsp;搜索" class="input_search">
+    		<a href="" id="clicks" target="_blank"><img src="../images/search.png" alt="" /></a>
+    		<ol class="search1">
+    			
+    		</ol>
+    		</div>
+    	</div>
+
+
+    	<ol>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="gonshi.html">公司介绍</a></li>
+				<li><a href="canpin1.html" class="nav_header">产品中心</a></li>
+				<li><a href="xinwen.html">新闻中心</a></li>
+				<li><a href="lianxi.html">联系我们</a></li>
+			</ol>
+    </div>
+
+
+
+<div class="top">
+    <ol>
+        <li><img src="../images/banner01.jpg" alt=""></li>
+        <li><img src="../images/banner02.jpg" alt=""></li>
+        <li><img src="../images/banner03.jpg" alt=""></li>
+        <li><img src="../images/banner04.jpg" alt=""></li>
+        <li><img src="../images/banner05.jpg" alt=""></li>
+    </ol>
+
+        <ul>
+            <li class="lei"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <div class="content">
+        <div class="top_1">
+                <span>您所在的位置：<a href="canpin1.html">产品中心</a></span>
+            </div>
+
+
+           <div class="left_1">
+                 <div class="leftn left_n1">公司介绍</div>
+
+
+                    <div class="click click1">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie1">
+                    <p>护肤产品</p>
+                    </div>
+
+                  <ul>
+                    <li class="index1">专注补水</li>
+                    <li class="index2">深度清洁</li>
+                  </ul>
+
+                    <div class="click click2">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                    <p>彩妆产品</p>
+                    </div>
+
+                <ul>
+                    <li class="index3">魅惑唇色</li>
+                    <li class="index4">绿色彩妆</li>
+                </ul>
+
+                    <div class="leftn left_n2">服务热线</div>
+
+
+                    <div class="onclick click3">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                    销售咨询
+                    </div>
+                <ol>
+                    <li>
+                        208-32468764
+                    </li>
+                    <li>
+                        208-32468764
+                    </li>
+                 </ol>
+
+
+                     <div class="onclick click4">
+                     <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                     销售联系
+                     </div>
+                 <ol>
+                     <li>
+                        208-32468764
+                    </li>
+                    <li>
+                        208-32468764
+                    </li>
+                </ol>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="content_right block1">
+                <h3>专注补水</h3>
+                <ul>
+                    <li>
+                    <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                    </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li>
+                         <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li>
+                     <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin04.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                </ul>
+
+                <ol>
+                <li><a href="canpin1.html">上一页</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">10</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">下一页</a></li>
+            </ol>
+            </div>
+            
+
+
+
+     <div class="content_right block2">
+                <h3>深度清洁</h3>
+                <ul>
+                    <li>
+                    <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                    </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li>
+                         <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li>
+                     <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin08.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                </ul>
+
+                <ol>
+                <li><a href="canpin1.html">上一页</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">10</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">下一页</a></li>
+            </ol>
+            </div>
+
+
+
+      
+     <div class="content_right block3">
+                <h3>魅惑唇色</h3>
+                <ul>
+                    <li>
+                    <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                    </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li>
+                         <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li>
+                     <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin01.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                </ul>
+
+                <ol>
+                <li><a href="canpin1.html">上一页</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">10</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">下一页</a></li>
+            </ol>
+            </div>
+            
+
+
+
+
+
+   
+     <div class="content_right block4">
+                <h3>绿色彩妆</h3>
+                <ul>
+                    <li>
+                    <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                    </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li>
+                         <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                    </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li>
+                     <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                    <li> 
+                    <a href="canpinxian.html"><img src="../images/chanpin02.jpg" alt="">
+                        <p>欧莱雅(LOREAL)雪颜科研致白卸斒精华液30ml改善肌肤质，均匀肤色</p>
+                        </a>
+                        <span>1377条评论</span>
+                        </li>
+                </ul>
+
+                <ol>
+                <li><a href="canpin1.html">上一页</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">10</a></li>
+                <li><a href=""><img src="../images/icon.png" alt=""></a></li>
+                <li><a href="">下一页</a></li>
+            </ol>
+            </div>
+            
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+        <div class="footer_quan">
+            <img src="../images/wei.jpg" alt="" class="footer_quan_left">
+            <div class="footer_quan_right">
+                <ul class="footer_quan_right_1">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="gonshi.html">公司介绍</a></li>
+                    <li><a href="canpin1.html">产品中心</a></li>
+                    <li><a href="xinwen.html">新闻中心</a></li>
+                    <li><a href="lianxi.html">联系我们</a></li>
+                </ul>
+                <a class="footer_quan_right_2">口袋关机了开机立刻决定是否就李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    </body>
+</html>

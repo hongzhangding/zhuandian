@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/header.css">
+        <script src="../js/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="../js/Share.js" ></script>
+        <script>
+        	$(function(){
+                var a=0;
+                var time;
+                function bb(){
+                    clearInterval(time);
+                    time=setInterval(function(){
+                            a+=1;
+                            if(a>4){
+                                a=0
+                            }
+
+                            $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+                    },1000)
+                }
+                bb()
+
+
+
+        			$('.top').hover(function() {
+        				/* Stuff to do when the mouse enters the element */
+        				 clearInterval(time);
+        			}, function() {
+        				/* Stuff to do when the mouse leaves the element */
+        				bb()
+        			});
+
+                    $('.top ul li').hover(function() {
+                        /* Stuff to do when the mouse enters the element */
+                        a=$(this).index();
+                         $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+
+                    }, function() {
+                        /* Stuff to do when the mouse leaves the element */
+                    });
+
+
+
+
+
+
+
+
+                            var c=0;
+                        $('.content_quan_left').click(function(event) {
+                            /* Act on the event */
+                                c+=1;
+                                if(c>2){
+                                    c=0;
+                                }
+                             $('.content_quan_ul').css('left', -350*c+'px');
+                        });
+
+                        $('.content_quan_right').click(function(event) {
+                            /* Act on the event */
+                                c-=1;
+                                if(c<0){
+                                    c=2;
+                                }
+                            $('.content_quan_ul').css('left', -350*c+'px');
+                        });
+
+                      $('.header>ol li a').hover(function() {
+                          /* Stuff to do when the mouse enters the element */
+                          $(this).addClass('nav_header').parent().siblings('li').children('a').removeClass('nav_header');
+                      }, function() {
+                          /* Stuff to do when the mouse leaves the element */
+                          $('.header>ol li:nth-of-type(1) a').addClass('nav_header').parent().siblings('li').children('a').removeClass('nav_header');
+                      });
+                     
+        	})
+        </script>
+        <style>
+        	*{
+        		margin: 0px;
+        		padding: 0px;
+        		text-decoration: none;
+        		list-style: none;
+        	}
+        	
+
+
+
+        	.center{
+				width: 100%;
+				height: 450px;
+				background:#fff3f3;
+				overflow: hidden;
+        	}
+        	.chenter_zhon{
+        		width: 85%;
+        		height: 90%;
+        		margin: 2% auto;
+        		position: relative;
+        		overflow: hidden;
+        	}
+        	.hr{
+        		width: 100%;
+        		size: 3px;
+        		color: #e5dbdb;
+        		margin-top: 40px;
+        	}
+        	.kuai{
+        		width: 150px;
+        		height: 100px;
+        		text-align: center;
+        		background: #fff3f3;
+        		position: absolute;
+        		top: 0px;
+        		left: 47%;
+				font-family: '微软雅黑';
+        	}
+        	.kuai h3{
+        		margin-bottom: 6px;
+        	}
+        	.chenter_zhon p{
+        		text-indent: 2em;
+        		font-size: 16px;
+        		line-height: 34px;
+        		margin-top: 80px;
+        		font-family: '微软雅黑';
+        	}
+        	.content{
+        		width: 100%;
+        		height: 600px;
+        		overflow: hidden;
+        		background: #ececec;
+        	}
+			.content_quan{
+				width: 85%;
+        		height: 98%;
+        		margin: 1% auto;
+        		overflow: hidden;
+        		position: relative;
+			}
+			.content_quan .kuai{
+				background: #ececec;
+			}
+			.content_quan img{
+				margin-top: 200px;
+				width: 50px;
+				height: 150px;
+			}
+			.content_quan_left{
+				float: left;
+				margin-left: 20px;
+                cursor: pointer
+			}
+			.content_quan_right{
+				float: right;
+				margin-right: 20px;
+                 cursor: pointer;
+			}
+
+			.content_quan_wrap{
+				width: 1000px;
+				height: 80%;
+				position: absolute;
+				left: 13%;
+				top: 15%;
+                overflow: hidden;
+			}
+            .content_quan_ul{
+                width: 5000px;
+                height: 100%;
+                position: relative;
+            }
+			.content_quan_ul li{
+				float: left;
+				width: 300px;
+				height: 100%;
+                margin-right: 50px;
+                border: 1px solid #666;
+			}
+			.content_quan_ul li img{
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+			}
+			
+			.nav{
+				width: 100%;
+				height: 550px;
+				background: #fff3f3;
+				overflow: hidden;
+			}
+			.nav_quan{
+				width: 85%;
+        		height: 98%;
+        		margin: 1% auto;
+        		overflow: hidden;
+        		position: relative;
+        		
+			}
+
+			.nav_quan_bottom{
+				width: 99%;
+				height: 70%;
+				margin-top: 90px;
+			}
+			.nav_quan_bottom img{
+				float: left;
+				width: 30%;
+				height: 60%;
+				margin-top: 10px;
+				margin-right: 10px;
+			}
+			.nav_quan_bottom p{
+				font-size: 16px;
+				line-height: 32px;
+
+			}
+        </style>
+    </head>
+    <body>
+    <div class="header">
+
+    	<img src="../images/logo.jpg" alt="" class="left">
+
+
+    	<div class="right">
+    		<ul>
+    			<li><a href="">2015年11月13日</a></li>
+    			<li><a href="">星期五</a></li>
+    			<li><a href="">设为首页</a></li>
+    			<li><a href="">收藏本站</a></li>
+    		</ul>
+
+    		<div>
+    		<input type="text" placeholder="&nbsp;&nbsp;搜索" class="input_search">
+    		<a href="" id="clicks" target="_blank"><img src="../images/search.png" alt="" /></a>
+    		<ol class="search1">
+    			
+    		</ol>
+    		</div>	
+    	</div>
+
+
+    	<ol>
+				<li><a href="index.html" class="nav_header">首页</a></li>
+				<li><a href="gonshi.html">公司介绍</a></li>
+				<li><a href="canpin1.html">产品中心</a></li>
+				<li><a href="xinwen.html">新闻中心</a></li>
+				<li><a href="lianxi.html">联系我们</a></li>
+			</ol>
+    </div>
+
+
+
+
+    <div class="top">
+    <ol>
+    	<li><img src="../images/banner01.jpg" alt=""></li>
+    	<li><img src="../images/banner02.jpg" alt=""></li>
+    	<li><img src="../images/banner03.jpg" alt=""></li>
+    	<li><img src="../images/banner04.jpg" alt=""></li>
+    	<li><img src="../images/banner05.jpg" alt=""></li>
+    </ol>
+
+    	<ul>
+    		<li class="lei"></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    </div>
+
+
+    
+    <div class="center">
+    	<div class="chenter_zhon">
+    		<hr class="hr">
+			<div class="kuai">
+				<h3>Conccpt</h3>
+				<h2>公司理念</h2>
+			</div>
+			<p>
+				主营育人，兼营美丽<br>
+				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;女人的美丽拉多少分离开的时间多了都是空间了空间都是佛离开的时间福利离开的时间分离开时间的法律离开家地方了开始的减肥了了空间的福利空间大师李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛偈建立空间里的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就
+				李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛偈建立空间里的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就
+			</p>
+    	</div>
+    </div>
+
+
+
+    <div class="content">
+    	<div class="content_quan">
+    		<hr class="hr">
+			<div class="kuai">
+				<h3>Predict</h3>
+				<h2>产品展示</h2>
+			</div>
+
+
+			
+			<img src="../images/lunbo.png" alt="" class="content_quan_left">
+                <div class="content_quan_wrap">
+				<ul class="content_quan_ul">
+					<li><img src="../images/chanpin01.jpg" alt=""></li>
+					<li><img src="../images/chanpin02.jpg" alt=""></li>
+					<li><img src="../images/chanpin05.jpg" alt=""></li>
+                    <li><img src="../images/chanpin06.jpg" alt=""></li>
+                    <li><img src="../images/chanpin07.jpg" alt=""></li>
+				</ul>
+                </div>
+			<img src="../images/lunbo2.png" alt="" class="content_quan_right">
+
+    	</div>
+    </div>
+
+
+
+    <div class="nav">
+    	<div class="nav_quan">
+    		<hr class="hr">
+			<div class="kuai">
+				<h3>About</h3>
+				<h2>关于我们</h2>
+			</div>
+
+			<div class="nav_quan_bottom">
+				<img src="../images/chanpin04.jpg" alt="">
+				<p>女人的美丽拉多少分离开的时间多了都是空间了空间都是佛离开的时间福利离开的时间分离开时间的法律离开家地方了开始的减肥了了空间的福利空间大师李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛偈建立空间里的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就
+				女人的美丽拉多少分离开的时间多了都是空间了空间都是佛离开的时间福利离开的时间分离开时间的
+				李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛偈建立空间里的谁开房记录凯撒的积分累计了空间都是浪费空间的萨菲是空间里说的金佛is的解放路口理解的撒浪费空间撒都浪费看见了了空间是的覅的建设路口理解的师傅说了可点击否口袋关机了开机立刻决定是否就李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛</p>
+			</div>
+    	</div>
+    </div>
+
+
+
+    <div class="footer">
+    	<div class="footer_quan">
+    		<img src="../images/wei.jpg" alt="" class="footer_quan_left">
+    		<div class="footer_quan_right">
+    			<ul class="footer_quan_right_1">
+    				<li><a href="index.html">首页</a></li>
+    				<li><a href="gonshi.html">公司介绍</a></li>
+    				<li><a href="canpin1.html">产品中心</a></li>
+    				<li><a href="xinwen.html">新闻中心</a></li>
+    				<li><a href="lianxi.html">联系我们</a></li>
+    			</ul>
+    			<a class="footer_quan_right_2">口袋关机了开机立刻决定是否就李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛</a>
+    		</div>
+    	</div>
+    </div>
+    </body>
+</html>

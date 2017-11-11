@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/header.css">
+        <script type="text/javascript" src="../js/Share.js" ></script>
+                <script src="../js/jquery-1.11.1.js"></script>
+        <script>
+           $(function(){
+                var a=0;
+                var time;
+                function bb(){
+                    clearInterval(time);
+                    time=setInterval(function(){
+                            a+=1;
+                            if(a>4){
+                                a=0
+                            }
+
+                            $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+                    },1000)
+                }
+                bb()
+
+
+
+                    $('.top').hover(function() {
+                        /* Stuff to do when the mouse enters the element */
+                         clearInterval(time);
+                    }, function() {
+                        /* Stuff to do when the mouse leaves the element */
+                        bb()
+                    });
+
+                    $('.top ul li').hover(function() {
+                        /* Stuff to do when the mouse enters the element */
+                        a=$(this).index();
+                         $('.top ol li').eq(a).css('display', 'block').siblings('li').css('display', 'none');
+
+                            $('.top ul li').eq(a).addClass('lei').siblings('li').removeClass('lei');
+
+                    }, function() {
+                        /* Stuff to do when the mouse leaves the element */
+                    });
+
+
+
+
+
+
+                     $('.header>ol li a').hover(function() {
+                          /* Stuff to do when the mouse enters the element */
+                          $(this).addClass('nav_header').parent().siblings('li').children('a').removeClass('nav_header');
+                      }, function() {
+                          /* Stuff to do when the mouse leaves the element */
+                          $('.header>ol li a').removeClass('nav_header');
+                      });
+
+
+
+
+
+
+
+
+
+
+
+ //点击切换事件
+                      var y=3;
+                      $('.left_1 .click1').click(function(event) {
+                        y+=1;
+                        if(y%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+
+                        $('.left_1 ul').eq(0).children('li').slideToggle(500);
+                      });
+
+                        //第二个
+                      var x=3;
+                      $('.left_1 .click2').click(function(event) {
+                        x+=1;
+                        if(x%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+
+
+
+                         $('.left_1 ul').eq(1).children('li').slideToggle(500);
+                      });
+
+                      //第三个
+                       var w=3;
+                      $('.left_1 .click3').click(function(event) {
+                        w+=1;
+                        if(w%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+                        $('.left_1 ol').eq(0).children('li').slideToggle(500);
+                      });
+
+                        //第四个
+                       var z=3;
+                      $('.left_1 .click4').click(function(event) {
+                        z+=1;
+                        if(z%2==0){
+                          $(this).children('img').css('transform', 'rotate(90deg)');
+                        }
+                        else{
+                             $(this).children('img').css('transform', 'rotate(0deg)');
+                        }
+
+
+                        $('.left_1 ol').eq(1).children('li').slideToggle(500);
+                      });
+
+
+
+
+
+
+                        //换内容
+                        $('.index1').click(function(event) {
+                            $('.block1').fadeIn(200);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeOut(0);
+                        });
+                         $('.index2').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeIn(200);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeOut(0);
+                        });
+                          $('.index3').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeIn(200);
+                               $('.block4').fadeOut(0);
+                        });
+                           $('.index4').click(function(event) {
+                            $('.block1').fadeOut(0);
+                             $('.block2').fadeOut(0);
+                              $('.block3').fadeOut(0);
+                               $('.block4').fadeIn(200);
+                        });
+
+
+
+
+
+
+
+                     
+            })
+        </script>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+                text-decoration: none;
+            }
+            .content{
+                width: 1200px;
+                height: 952px;
+                margin: 0px auto;
+                overflow: hidden;
+            }
+            .content_right{
+                width: 900px;
+                float: right;
+                height: 9000px;
+            }
+
+            .content_right_1{
+                float: left;
+                width: 550px;
+                height: 700px;
+                display: none;
+            }
+            .content_right_1 img{
+                margin-top: 20px;
+                width: 500px;
+                height: 600px;
+            }
+            .block2{
+                display: block;
+            }
+            .content_right_1 h3{
+                float: right;
+                margin-bottom: 20px;
+            }
+            .content_right_2{
+                float: right;
+                width: 280px;
+                height: 760px;
+                margin-right: 0px;
+                margin-top: 80px;
+            }
+            .content_right_2 p{
+              font-size: 16px;
+                color: #333;
+                line-height: 26px;
+            }
+            .content_right_3{
+                width: 150px;
+                height: 60px;
+                float: right;
+                margin-top: 40px;
+                margin-right: 30px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="header">
+
+    	<img src="../images/logo.jpg" alt="" class="left">
+
+
+    	<div class="right">
+    		<ul>
+    			<li><a href="">2015年11月13日</a></li>
+    			<li><a href="">星期五</a></li>
+    			<li><a href="">设为首页</a></li>
+    			<li><a href="">收藏本站</a></li>
+    		</ul>
+
+    		<div>
+    		<input type="text" placeholder="&nbsp;&nbsp;搜索" class="input_search">
+    		<a href="" id="clicks" target="_blank"><img src="../images/search.png" alt="" /></a>
+    		<ol class="search1">
+    			
+    		</ol>
+    		</div>
+    	</div>
+
+
+    	<ol>
+				<li><a href="index.html" >首页</a></li>
+				<li><a href="gonshi.html">公司介绍</a></li>
+				<li><a href="canpin1.html">产品中心</a></li>
+				<li><a href="xinwen.html">新闻中心</a></li>
+				<li><a href="lianxi.html">联系我们</a></li>
+			</ol>
+    </div>
+
+
+    <div class="top">
+    <ol>
+        <li><img src="../images/banner01.jpg" alt=""></li>
+        <li><img src="../images/banner02.jpg" alt=""></li>
+        <li><img src="../images/banner03.jpg" alt=""></li>
+        <li><img src="../images/banner04.jpg" alt=""></li>
+        <li><img src="../images/banner05.jpg" alt=""></li>
+    </ol>
+
+        <ul>
+            <li class="lei"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+<div class="content">
+    <div class="top_1">
+                <span>您所在的位置：首页<a href="">产品详情</a></span>
+            </div>
+
+
+
+            <div class="left_1">
+                 <div class="leftn left_n1">联系我们</div>
+
+
+                    <div class="click click1">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie1">
+                    <p>美容精品</p>
+                    </div>
+
+                  <ul>
+                    <li class="index1">玫瑰精华护手霜</li>
+                    <li class="index2">木瓜精华提亮素</li>
+                  </ul>
+
+                    <div class="click click2">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                    <p>补水精品</p>
+                    </div>
+
+                <ul>
+                    <li class="index3">胶原蛋白精补水</li>
+                    <li class="index4">木瓜精华液</li>
+                </ul>
+
+                    <div class="leftn left_n2">服务热线</div>
+
+
+                    <div class="onclick click3">
+                    <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                    销售咨询
+                    </div>
+                <ol>
+                    <li>
+                        208-32468764
+                    </li>
+                    <li>
+                        208-32468764
+                    </li>
+                 </ol>
+
+
+                     <div class="onclick click4">
+                     <img src="../images/icon.png" alt="" class="qiehuan qie2">
+                     销售联系
+                     </div>
+                 <ol>
+                     <li>
+                        208-32468764
+                    </li>
+                    <li>
+                        208-32468764
+                    </li>
+                </ol>
+            </div>
+
+
+
+
+
+
+            <div class="content_right">
+
+
+
+            <div class="content_right_1 block1">
+                    <h3>玫瑰精华护手霜</h3>
+                    <img src="../images/news.jpg" alt="" >
+                </div>
+
+                <div class="content_right_1 block2">
+                    <h3>木瓜精华提亮素</h3>
+                     <img src="../images/chanpin08.jpg" alt="" >
+                </div>
+
+                <div class="content_right_1 block3">
+                    <h3>胶原蛋白精补水</h3>
+                     <img src="../images/chanpin.png" alt="" >
+                </div>
+
+                <div class="content_right_1 block4">
+                    <h3>木瓜精华液</h3>
+                      <img src="../images/gongsi.jpg" alt="" >
+                </div>
+
+
+
+
+
+                <span class="content_right_2"><p>
+                    看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场就离开立刻就离开对方了空间的水立方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场方看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场看时间的浪费可能是的减肥难看离开了的空间里看的时间离开现场
+                    </p>
+                    <div class="content_right_3">
+                上一篇：紫外线防护<br>
+                <br>
+                   下一篇：紫外线防护
+                </div>
+                </span>
+                
+            </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="footer">
+        <div class="footer_quan">
+            <img src="../images/wei.jpg" alt="" class="footer_quan_left">
+            <div class="footer_quan_right">
+                <ul class="footer_quan_right_1">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="gonshi.html">公司介绍</a></li>
+                    <li><a href="canpin1.html">产品中心</a></li>
+                    <li><a href="xinwen.html">新闻中心</a></li>
+                    <li><a href="lianxi.html">联系我们</a></li>
+                </ul>
+                <a class="footer_quan_right_2">口袋关机了开机立刻决定是否就李会计看了觉得舒服了空间都是浪费空间空间都是离开房间数量的开发建设了空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛空间离开那里的时刻减肥了开始大家了空间都是离开房间第四佛</a>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
